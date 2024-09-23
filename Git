@@ -1,0 +1,39 @@
+CHERRY-PICK:
+Cherry-picking in Git allows you to pick a specific commit from one branch and apply it to another branch, without merging the full branch. This is helpful when you only want to apply a particular bug fix or feature from a different branch instead of merging everything.
+
+How Cherry-pick Works:
+The process involves selecting a specific commit from a branch and applying it as a new commit on another branch.
+
+Example Scenario:
+Branches: You have two branches, main and feature-branch.
+
+main: Stable branch for production code.
+feature-branch: Branch where you're working on multiple features.
+Goal: You want to apply only one commit from feature-branch to main.
+Step-by-Step Cherry-pick Example:
+1. Check the Commits in feature-branch:
+Start by listing the commits on feature-branch. Use:
+git log --oneline
+2. Switch to the Target Branch (e.g., main):
+Now, switch to the branch where you want to apply the cherry-picked commit (in this case, main):
+git checkout main
+3. Cherry-pick the Commit:
+Use the git cherry-pick command followed by the commit hash (def4567 in this case) to apply that commit from feature-branch onto main:
+git cherry-pick def4567
+This command will take the changes from commit def4567 and apply them to main as a new commit.
+If there are no conflicts, Git will create a new commit on main with the same changes as def4567.
+4. Resolve Conflicts (if any):
+If there are conflicts (e.g., both branches modified the same file differently), Git will notify you of the conflict and you need to resolve it:
+# Open conflicting files, fix the conflicts
+git add <conflicted-files>
+git cherry-pick --continue
+If there are no conflicts, Git will proceed without any additional steps.
+
+5. Push the Changes to the Remote:
+Once you’ve cherry-picked the commit to main, push the changes to the remote repository:
+git push origin main
+When to Use Cherry-pick:
+Selective bug fixes: Apply a specific bug fix from one branch to another.
+Backporting changes: Bring features or bug fixes from a newer version to an older one.
+Avoiding full merges: When you don’t want to merge an entire branch but need one specific commit.
+
