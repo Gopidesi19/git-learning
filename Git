@@ -37,3 +37,81 @@ Selective bug fixes: Apply a specific bug fix from one branch to another.
 Backporting changes: Bring features or bug fixes from a newer version to an older one.
 Avoiding full merges: When you don’t want to merge an entire branch but need one specific commit.
 
+
+
+Git Stash:
+git stash is a powerful command in Git that temporarily saves changes that are not yet ready to be committed, allowing you to switch branches or pull new changes without losing your work. It "stashes" your working directory’s changes so you can later retrieve and apply them.
+
+How git stash Works:
+It stores your uncommitted changes (both staged and unstaged) in a stash.
+Your working directory and index are cleaned, allowing you to switch branches or pull changes.
+Later, you can apply those stashed changes back to your working directory.
+Scenario-Based Example:
+Scenario:
+You are working on the feature-branch and made some changes to files, but suddenly you are asked to quickly fix a bug in the main branch. You haven't committed your current work on the feature-branch yet, and you don't want to lose it.
+
+Step-by-Step Example:
+1. Make Some Changes in feature-branch:
+Let's assume you're on the feature-branch and made changes to several files:
+git status
+
+git stash is a powerful command in Git that temporarily saves changes that are not yet ready to be committed, allowing you to switch branches or pull new changes without losing your work. It "stashes" your working directory’s changes so you can later retrieve and apply them.
+
+How git stash Works:
+It stores your uncommitted changes (both staged and unstaged) in a stash.
+Your working directory and index are cleaned, allowing you to switch branches or pull changes.
+Later, you can apply those stashed changes back to your working directory.
+Scenario-Based Example:
+Scenario:
+You are working on the feature-branch and made some changes to files, but suddenly you are asked to quickly fix a bug in the main branch. You haven't committed your current work on the feature-branch yet, and you don't want to lose it.
+
+Step-by-Step Example:
+1. Make Some Changes in feature-branch:
+Let's assume you're on the feature-branch and made changes to several files:
+
+bash
+Copy code
+git status
+Example output:
+On branch feature-branch
+Changes not staged for commit:
+  modified:   file1.txt
+  modified:   file2.txt
+You realize you need to fix a bug on main, but you don’t want to commit these changes yet.
+
+2. Stash the Changes:
+To save your uncommitted changes in the stash, use:
+git stash
+Your working directory is now clean, meaning your changes have been temporarily saved and can be applied later.
+You can verify this by running git status again:
+git status
+3. Switch to the main Branch and Fix the Bug:
+Now, you can safely switch to the main branch without losing your changes:
+git checkout main
+You make the necessary changes for the bug fix, commit them, and push to the remote:
+git commit -am "Fixed bug in the login flow"
+git push origin main
+4. Return to feature-branch and Apply the Stashed Changes:
+After fixing the bug in main, you can return to feature-branch:git checkout feature-branch
+To restore your saved changes from the stash, use:git stash pop
+This will apply the stashed changes to your working directory and remove the stash from the list. If you want to keep the stash (in case of multiple uses), you can use git stash apply instead of pop.
+
+After applying the stash, your working directory will have the changes you saved earlier:
+git status
+Additional git stash Commands:
+Stashing Untracked Files: By default, git stash only stashes tracked changes. To stash untracked files as well:
+git stash -u
+List Stashes: You can list all your stashes:
+git stash list
+stash@{0}: WIP on feature-branch: 34b1c3a Adding new login feature
+stash@{1}: WIP on feature-branch: 78a2c3a Another feature in progress
+Apply a Specific Stash: To apply a specific stash from the list without removing it:
+git stash apply stash@{1}
+Drop a Stash: If you no longer need a specific stash:
+git stash drop stash@{0}
+Clear All Stashes: To remove all stashes:
+git stash clear
+When to Use git stash:
+Switching branches mid-work: When you need to switch branches but don't want to commit incomplete work.
+Pulling from remote: When you want to pull new changes from the remote without committing or losing your current work.
+Experimenting: When testing something out and you don’t want to create unnecessary commits.
