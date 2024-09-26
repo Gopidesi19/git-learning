@@ -31,3 +31,14 @@ git submodule update: Updates submodules after switching branches.
 git submodule update --init: After cloning a new repo, if you need to add submodules to it from .gitmodules file, use this command.
 git submodule update --init --recursive: If the submodules inside a newly cloned repo are nested, then use this.
 git submodule update --remote: Pulls all changes in the submodules.
+Git Blame - Cheat Sheet
+git blame <options> <filename>
+Options:
+-L to filter based on line numbers
+-s to suppress the author's name and timestamp from the output
+-e to show the author's email instead of the author's name
+-f to show the filename in the original commit
+-n to show the line number in the original commit
+Example: To find the author of lines 5 to 7 in the file Readme.md, one can use:
+
+git blame -L 5,7 Readme.md
