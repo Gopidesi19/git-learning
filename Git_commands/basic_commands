@@ -5,15 +5,18 @@ git add [file]: Adds a file to the staging area.
 git commit -m "[message]": Commits changes with a message.
 git status: Shows the status of changes.
 git log: Displays the commit history.
+-------------------------------------------------
 Branching and Merging
 git branch: Lists all branches.
 git branch [branch-name]: Creates a new branch.
 git checkout [branch-name]: Switches to a specified branch.
 git merge [branch-name]: Merges a branch into the current branch.
+--------------------------------------------
 Remote Repositories
 git remote add origin [url]: Adds a remote repository.
 git push origin [branch-name]: Pushes changes to a remote repository.
 git pull: Fetches and merges changes from a remote repository.
+---------------------------------------------
 Configuration
 git config --global user.name "[name]": Sets the username for commits.
 git config --global user.email "[email]": Sets the email for commits.
@@ -24,13 +27,15 @@ git stash pop: Applies the latest stashed set and drops it
 git tag: Adds a tag to a commit
 git tag -a -m: Adds an annotated tag with a message
 git push tag name: Pushes tag to the remote repo
+---------------------------------------------------
 Git Submodule - Cheat Sheet
 git submodule add <URL>: Adds a submodule to the project.
 git submodule status: View status (working, staging, or indexed files) of all the submodules.
 git submodule update: Updates submodules after switching branches.
 git submodule update --init: After cloning a new repo, if you need to add submodules to it from .gitmodules file, use this command.
 git submodule update --init --recursive: If the submodules inside a newly cloned repo are nested, then use this.
-git submodule update --remote: Pulls all changes in the submodules.
+git submodule update --remote: Pulls all changes in the submodules
+-------------------------------------------------------------------
 Git Blame - Cheat Sheet
 git blame <options> <filename>
 Options:
@@ -40,5 +45,27 @@ Options:
 -f to show the filename in the original commit
 -n to show the line number in the original commit
 Example: To find the author of lines 5 to 7 in the file Readme.md, one can use:
-
 git blame -L 5,7 Readme.md
+--------------------------------------
+Git Bisect - Cheat Sheet
+Examples:
+git bisect start - To start Git Bisect
+git bisect good - To declare that the commit is good
+git bisect bad - To declare that the commit has an error
+git bisect reset - To restart
+-----------------------------
+Let us have a quick recap of the concepts covered in this course:
+
+git cherrypick (Moving commits between branches)
+
+git stash (Saving changes temporarily)
+
+git submodules (Adding a subproject)
+
+git Blame (Finding the author of a line)
+
+git Bisect (Finding the commit which introduced a bug)
+
+git reflog (Retrieving deleted commits)
+
+git hooks (Automating things using script)
