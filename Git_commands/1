@@ -1,0 +1,19 @@
+Basic Commands
+git init: Initializes a new Git repository.
+git clone [url]: Clones an existing repository from a URL.
+git add [file]: Adds a file to the staging area.
+git commit -m "[message]": Commits changes with a message.
+git status: Shows the status of changes.
+git log: Displays the commit history.
+Branching and Merging
+git branch: Lists all branches.
+git branch [branch-name]: Creates a new branch.
+git checkout [branch-name]: Switches to a specified branch.
+git merge [branch-name]: Merges a branch into the current branch.
+Remote Repositories
+git remote add origin [url]: Adds a remote repository.
+git push origin [branch-name]: Pushes changes to a remote repository.
+git pull: Fetches and merges changes from a remote repository.
+Configuration
+git config --global user.name "[name]": Sets the username for commits.
+git config --global user.email "[email]": Sets the email for commits.

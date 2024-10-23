@@ -35,7 +35,7 @@ When to Use Cherry-pick:
 Selective bug fixes: Apply a specific bug fix from one branch to another.
 Backporting changes: Bring features or bug fixes from a newer version to an older one.
 Avoiding full merges: When you don’t want to merge an entire branch but need one specific commit.
-
+--------------------------------------------------------------------------------
 
 
 Git Stash:
@@ -114,4 +114,4 @@ When to Use git stash:
 Switching branches mid-work: When you need to switch branches but don't want to commit incomplete work.
 Pulling from remote: When you want to pull new changes from the remote without committing or losing your current work.
 Experimenting: When testing something out and you don’t want to create unnecessary commits.
-git rebase:
+----------------------------------------------------------------------------
