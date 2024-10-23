@@ -3,7 +3,6 @@ Cherry-picking in Git allows you to pick a specific commit from one branch and a
 
 How Cherry-pick Works:
 The process involves selecting a specific commit from a branch and applying it as a new commit on another branch.
-
 Example Scenario:
 Branches: You have two branches, main and feature-branch.
 
@@ -115,3 +114,4 @@ When to Use git stash:
 Switching branches mid-work: When you need to switch branches but don't want to commit incomplete work.
 Pulling from remote: When you want to pull new changes from the remote without committing or losing your current work.
 Experimenting: When testing something out and you don’t want to create unnecessary commits.
+git rebase:
